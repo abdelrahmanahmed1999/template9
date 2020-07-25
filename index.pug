@@ -1,0 +1,126 @@
+doctype
+html(class='lang')
+    head
+        meta(charset='UTF-8')
+        title template5
+        link(rel='stylesheet' href='css/font-awesome.css')
+        link(rel='stylesheet' href='css/bootstrap.css')
+        link(rel='stylesheet' href='css/style.css')
+    body
+
+        //start header
+
+        section(class='header text-center')
+            .overlay
+                    nav(class='navbar navbar-inverse navbar-fixed-top' role='navigation')
+                        div(class='navbar-header')
+
+                            button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#ournavbar")
+                                |
+                                span(class='src-only')
+                                |
+                                |
+                                span(class='icon-bar')
+                                |
+                                |
+                                span(class='icon-bar')
+                                |
+                                |
+                                span(class='icon-bar')
+                            |
+                            |
+                            <a href="#" class="navbar-brand wobble-horizontal">abdo </a> 
+
+                        <div class="collapse navbar-collapse" id="ournavbar"> 
+                            ul(class='nav navbar-nav navbar-right')
+                                li(class='active') #[a(href='#' data-value='requirement') About]
+                                li #[a(href='#' data-value='services') Services]
+                                li #[a(href='#' data-value='our-work') Portfolio]
+                                li #[a(href='#' data-value='touch') Contact]
+                    .content
+                        h1 your favourite source of free bootstrap themes
+                        span(class='line') 
+                        p start bootstrap can help you build better websites using bootstrap css framework just download yor template and start going ,no string attached
+                        button(class='btn btn-danger') find out more
+
+        //end header
+
+        //start requirement
+
+        section(class='requirement text-center')
+            .container
+                h2(class='h1') we've got what you need
+                span.line
+                p start bootstrap can help you build better websites using bootstrap css framework just download yor template and start going ,no string attached
+                button(class='btn btn-default') get started
+
+        //end requirement
+
+        //start services
+
+        -
+            let icon=['fa-diamond','fa-paper-plane','fa-newspaper-o','fa-heart'],
+                head=['Study Template','Ready To Ship','Up To Date','Made With Love'],
+                para=['start bootstrap can help you build better websites using bootstrap css framework',
+                    'start bootstrap can help you build better websites using bootstrap css framework',
+                    'start bootstrap can help you build better websites using bootstrap css framework',
+                    'start bootstrap can help you build better websites using bootstrap css framework'];
+
+        section(class='services text-center')
+            .container
+                h2(class='h1') At Your Service
+                |
+                |
+                span.line
+                div(class='row feature')
+                    -for(var i=0;i<4;i++)
+                        div(class='col-md-3 col-xs-6')
+                            .feat
+                                i(class=`fa ${icon[i]} fa-fw fa-5x fa-${i+1}`)
+                                h2= head[i]
+                                p=  para[i]
+
+        //end services
+
+        //start our work
+
+        section(class='our-work')
+            .container-fluid
+                .row
+                    -for(var i=1;i<=6;i++)
+                        div(class='col-md-4 col-xs-6')
+                            div(class='work')
+                                img(src='images/work_' + i + '.png' width='455px' height='302')
+                .clearfix
+
+        //end our work
+  
+        //start download
+        
+        section(class='download text-center')
+            h2 Free Download At start Bootstrap!
+            button(class='btn btn-default') Download Now
+
+        //end download
+
+        //start touch
+        
+        section(class='touch text-center')
+            .container
+                h2 let's get in touch
+                span.line
+                p start bootstrap can help you build better websites using bootstrap css framework just download yor template and start going ,no string attached
+                div(class='row get-touch')
+                    div(class='col-md-offset-3 col-md-3 col-xs-4') 
+                        i(class='fa fa-heart fa-fw fa-3x')
+                        span 19/7/1999
+                    div(class='col-md-3 col-xs-4')
+                        i(class='fa fa-heart fa-fw fa-3x')
+                        span abdo@abdo.com
+
+        //end touch
+
+        script(src='js/jquery-1.12.0.min.js')
+        script(src='js/bootstrap.min.js')
+        script(src='js/jquery.nicescroll.min.js')
+        script(src='js/custom.js')

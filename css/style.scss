@@ -1,0 +1,273 @@
+@import 'variable';
+@import 'mixin';
+@import 'extend';
+
+/*start general*/
+
+.btn{
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+/*end general*/
+
+/*start header*/
+
+.header{
+    background:url('../images/header_stock.png');
+
+    @include cover;
+
+    .navbar-header{
+        margin-left:100px
+    }
+
+    .navbar-header a{
+        color:$primarycolor;
+        font-weight:bold;
+        position:relative;
+        @extend .upper-case;
+    }
+
+    .navbar-right{
+        margin-right:0;
+    }
+
+    ul{
+        @extend .upper-case;
+        margin-right:100PX !important;
+        li{
+            a{
+                color:$secondarycolor;
+                font-weight:bold;
+                @include transition;
+
+                &:hover{
+                    color:$primarycolor;
+                }
+            }
+        }
+    }
+
+    .content{
+        position:absolute;
+        top:50%;
+        left:50%;
+        -webkit-transform:translate(-50%,-50%);
+        transform:translate(-50%,-50%);
+        width: 600px;
+        height: 300px;
+
+        h1{
+            @include heading2;
+            font-size:50px;
+        }
+
+        p{
+            @include paragraph;
+        }
+
+        button{
+            @include button;
+        }
+    }
+}
+
+/*end header*/
+
+/*start requirement*/
+
+.requirement{
+    color:$secondarycolor;
+    background:$primarycolor;
+    padding:50px 0;
+
+    @media (max-width:767px) {
+
+        &{
+            padding:20px 0;
+        }
+    }
+
+    h2{
+        @extend .upper-case;
+        @include heading2;
+    }
+
+    .line{
+        background:#FFF;
+    }
+
+    p{
+        @include paragraph;
+    }
+
+    button{
+        @include button;
+        color:#000;
+        margin-top:20px;
+
+        &:hover{
+            background:$primarycolor;
+            color:#FFF;
+            border:1px solid #FFF;
+        }
+    }
+
+}
+
+/*end requirement*/
+
+/*start services*/
+
+.services{
+    padding:50px 0;
+
+    @media (max-width:767px) {
+
+        &{
+            padding:20px 0;
+        }
+
+        .feature{
+            margin-top:20px !important;
+        }
+    }
+
+    h2{
+        @include heading2;
+        color:#000;
+    }
+
+    .feature{
+        margin-top:50px;
+
+        .feat{
+            margin-bottom:20px;
+        }
+    }
+
+    p{
+        color:$secondarycolor;
+    }
+}
+
+@for $i from 1 through 4{
+    .services .fa-#{$i}{
+        color:$primarycolor;
+    }
+}
+
+/*end services*/
+
+/*start our work*/
+
+.our-work{
+
+    .row {
+        .col-md-4{
+        padding-right:0;
+        padding-left:0;
+        }
+    }
+
+    .work{
+        position:relative;
+        font-size:0;
+
+       &:after{
+           content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            height:100%;
+            width:100%;
+            background:rgba(240, 95, 64, .6);
+            display:none;
+            @include transition;
+        }
+
+        &:hover{ 
+            &:after{
+            display:block;
+            }
+        }
+
+        img{
+            width:100%;
+        }
+    }
+}
+
+/*end our work*/
+
+/*start download*/
+
+.download{
+    padding:50px;
+    background:$thirdcolor;
+
+    @media (max-width:767px) {
+
+        &{
+            padding:20px 0;
+        }
+    }
+
+    h2{
+        @include heading2;
+    }
+
+    button{
+        @include button;
+        color:$thirdcolor;
+        background:#fff;
+        border:1px solid $thirdcolor;
+
+        &:hover{
+            background:$thirdcolor;
+            color:#fff;
+        }
+    }
+}
+
+/*end download*/
+
+/*start touch*/
+
+.touch{
+  padding:50px 0;
+
+    @media (max-width:767px) {
+
+        &{
+            padding:20px 0;
+        }
+
+        .row{
+            padding-left:140px;
+        }
+    }
+
+    h2{
+        @include heading2;
+    }
+
+    p{
+        @include paragraph;
+    }
+
+    .get-touch{
+
+        margin-top:40px;
+
+        span{
+            display:block;
+            color:$primarycolor;
+            margin-top:10px;
+        }
+
+    }
+}
+
+/*end touch*/

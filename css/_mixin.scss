@@ -1,0 +1,42 @@
+
+@mixin heading2{
+    font-size:25px;
+    color:$secondarycolor;
+}
+
+@mixin paragraph{
+    margin:auto ;
+    width:500px;
+    font-size:17px;
+    color:$secondarycolor;
+}
+
+@mixin transition {
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;    
+}
+
+@mixin cover {
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;    
+}
+
+
+@mixin button{
+    border-radius:20px ;
+    margin-top:20px;
+    padding:10px 20px ;
+    font-weight:bold ;
+    @extend .upper-case ;
+    @include transition ;
+
+    &:hover{
+        color:$primarycolor ;
+        background:#FFF ;
+
+    }
+}
